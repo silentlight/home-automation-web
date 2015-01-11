@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="HomeAutomationApp">
+  <body ng-app="homeAutomationApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -23,11 +23,12 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Temperature</a></li>
-          <li><a ng-href="#/about">Humidity</a></li>
-          <li><a ng-href="#">Light Level</a></li>
+          <li><a ng-href="#/" active-link="active">Home</a></li>
+          <li><a ng-href="#/sensors/temperature" active-link="active">Temperature</a></li>
+          <li><a ng-href="#/sensors/humidity" active-link="active">Humidity</a></li>
+          <li><a ng-href="#/sensors/light-level" active-link="active">Light Level</a></li>
         </ul>
-        <h3 class="text-muted">Hejman Adruino</h3>
+        <h3 class="text-muted">Home Automation</h3>
       </div>
 
       <div ng-view=""></div>
@@ -80,9 +81,20 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,src}) scripts/scripts.js -->
+    <script src="app/components/navigation/navigation.js"></script>
+    <script src="app/components/navigation/activeLinkDirective.js"></script>
+    <script src="app/components/home/home.js"></script>
+    <script src="app/components/home/homeController.js"></script>
+    <script src="app/components/sensors/sensors.js"></script>
+    <script src="app/components/sensors/controllers/temperatureController.js"></script>
+    <script src="app/components/sensors/controllers/humidityController.js"></script>
+    <script src="app/components/sensors/controllers/lightLevelController.js"></script>
+    <script src="app/components/sensors/sensorsFetcher.js"></script>
+    
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+    <script src="app/variables.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
