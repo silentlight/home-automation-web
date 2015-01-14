@@ -16,6 +16,10 @@ homeAutomationApp.config(function ($routeProvider) {
             templateUrl: 'app/components/sensors/sensorsView.html',
             controller: 'sensorsLightLevelController'
         })
+        .when('/inputs', {
+            templateUrl: 'app/components/inputs/inputsView.html',
+            controller: 'inputsController'
+        })
         .otherwise({
             redirectTo: '/'
         });

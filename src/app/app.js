@@ -18,5 +18,6 @@ var homeAutomationApp = angular.module('homeAutomationApp', [
     'module.navigation',
     'module.home',
     'module.sensors',
+    'module.inputs'
 ]);
 
