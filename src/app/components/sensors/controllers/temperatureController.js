@@ -9,7 +9,9 @@ sensorsModule.controller('sensorsTemperatureController', function ($scope, senso
         $scope.entries = data;
     });
 
-    sensorsService.temperature.now().success(function(data){
-        alert(data.data);
-    });
+    $scope.getCurrentValue = function(){
+        sensorsService.temperature.now().success(function(data){
+            alert(data.data);
+        });
+    }
 });

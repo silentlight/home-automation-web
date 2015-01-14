@@ -9,7 +9,9 @@ sensorsModule.controller('sensorsLightLevelController', function ($scope, sensor
         $scope.entries = data;
     });
 
-    sensorsService.lightLevel.now().success(function(data){
-        alert(data.data);
-    });
+    $scope.getCurrentValue = function() {
+        sensorsService.lightLevel.now().success(function (data) {
+            alert(data.data);
+        });
+    }
 });

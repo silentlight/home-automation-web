@@ -9,7 +9,9 @@ sensorsModule.controller('sensorsHumidityController', function ($scope, sensorsS
         $scope.entries = data;
     });
 
-    sensorsService.humidity.now().success(function(data){
-        alert(data.data);
-    });
+    $scope.getCurrentValue = function() {
+        sensorsService.humidity.now().success(function (data) {
+            alert(data.data);
+        });
+    }
 });
