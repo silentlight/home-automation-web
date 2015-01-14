@@ -8,4 +8,8 @@ sensorsModule.controller('sensorsTemperatureController', function ($scope, senso
     sensorsService.temperature.getAll().success(function(data){
         $scope.entries = data;
     });
+
+    sensorsService.temperature.now().success(function(data){
+        alert(data.data);
+    });
 });
