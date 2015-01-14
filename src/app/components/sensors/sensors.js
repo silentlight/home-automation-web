@@ -1,3 +1,3 @@
-var sensorModule = angular.module('module.sensors', [
+var sensorsModule = angular.module('module.sensors', [
 
 ]);

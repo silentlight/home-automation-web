@@ -1,11 +1,11 @@
-sensorModule.controller('sensorsLightLevelController', function ($scope, sensorsFetcher) {
+sensorsModule.controller('sensorsLightLevelController', function ($scope, sensorsService) {
     $scope.entries = [];
 
     $scope.addUnit = function(value){
         return value;
     };
 
-    sensorsFetcher.lightLevel.getAll().success(function(data){
+    sensorsService.lightLevel.getAll().success(function(data){
         $scope.entries = data;
     });
 });

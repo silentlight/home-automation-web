@@ -1,11 +1,11 @@
-sensorModule.controller('sensorsHumidityController', function ($scope, sensorsFetcher) {
+sensorsModule.controller('sensorsHumidityController', function ($scope, sensorsService) {
     $scope.entries = [];
 
     $scope.addUnit = function(value){
       return value + " %";
     };
 
-    sensorsFetcher.humidity.getAll().success(function(data){
+    sensorsService.humidity.getAll().success(function(data){
         $scope.entries = data;
     });
 });
