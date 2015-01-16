@@ -13,6 +13,6 @@ inputsModule.controller('inputsController', function ($scope, inputsService) {
     };
 
     inputsService.led.getStatus().success(function(data){
-        alert('Led is currently ' + data.data ? 'on' : 'off')
+        alert('Led is currently ' + (data.data == '1' ? 'on' : 'off'))
     });
 });
