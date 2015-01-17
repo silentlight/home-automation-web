@@ -1,1 +1,1 @@
-<h3>Led</h3> <div class="btn-toolbar"> <button class="btn btn-primary" ng-click="ledOn()">Turn led on</button> <button class="btn btn-secondart" ng-click="ledOff()">Turn led off</button> </div>
+<h3>Led</h3> <div class="btn-toolbar"> <button class="btn" ng-click="ledOn()" ng-class="{'btn-primary': currentLedStatus == 0 }" ng-disabled="currentLedStatus == 1">Turn led on</button> <button class="btn" ng-click="ledOff()" ng-class="{'btn-primary': currentLedStatus == 1 }" ng-disabled="currentLedStatus == 0">Turn led off</button> </div>
